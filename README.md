@@ -1,5 +1,7 @@
 🔐 SOC-Oriented URL Threat Analysis & Mitigation Tool
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 🎯 Project Overview
 
 The SOC URL Threat Analysis Tool is a custom-built, Python-based Threat Intelligence platform designed to simulate the workflow of a Level 1/Level 2 Security Operations Center (SOC) Analyst.
@@ -33,8 +35,4 @@ Safe Triage: Designed to gather context without tipping off adversaries or trigg
 This project is designed to run in an isolated Python Virtual Environment to prevent system-wide package conflicts (PEP 668 compliant).
 
 Clone the repository & navigate to the directory: git clone https://github.com/yourusername/soc-url-analyzer.git
-cd soc-url-analyzer
-
-Bash
-git clone https://github.com/yourusername/soc-url-analyzer.git
 cd soc-url-analyzer
