@@ -1,69 +1,40 @@
-said
-🔐 SOC URL Threat Analysis & Mitigation Tool
+🔐 SOC-Oriented URL Threat Analysis & Mitigation Tool
 
-A custom-built, Python-based Threat Intelligence platform that simulates a Level 1/Level 2 SOC Analyst workflow. It analyzes suspicious URLs using passive OSINT, evaluates cryptographic security, and aggregates community threat intel to provide an automated risk score and mandatory SOC mitigation steps in real-time. Ideal for triaging potential phishing links and malicious beacons without active scanning.
+🎯 Project Overview
 
-🚀 Features
+The SOC URL Threat Analysis Tool is a custom-built, Python-based Threat Intelligence platform designed to simulate the workflow of a Level 1/Level 2 Security Operations Center (SOC) Analyst.
 
-✅ Extracts passive domain intelligence (WHOIS) to flag newly registered domains
-✅ Evaluates SSL/TLS certificates for expiration and issuer validity
-✅ Inspects HTTP security headers (HSTS, CSP, X-Frame-Options)
-✅ Integrates VirusTotal API v3 for crowdsourced threat intelligence
-✅ Calculates automated risk scores (0-100) with severity levels
-✅ Generates mandatory SOC mitigation steps and analyst reasoning
-✅ Provides a clean, interactive dark-mode dashboard via Streamlit
-
-🛠️ Requirements
-
-Python 3.x
-Linux (tested on Kali, Ubuntu) / Windows / macOS
-Internet connection for API queries
-Python Libraries
-
-pip install streamlit python-whois requests
-
-(Note: ssl, socket, and urllib are part of Python’s standard library)
-
-📦 Usage
-
-Clone the Repository
-
-git clone https://github.com/YourUsername/SOC-URL-Analyzer.git
-cd SOC-URL-Analyzer
-
-Set Up Virtual Environment (Recommended for Kali Linux)
-
-python3 -m venv soc-env
-source soc-env/bin/activate
-
-Install Dependencies
-
-pip install streamlit python-whois requests
-
-Configure API Key (Optional)
-
-Obtain a free VirusTotal API key from https://www.google.com/search?q=virustotal.com.
-You can enter this directly in the web dashboard UI under the configuration sidebar.
-
-Run the Tool
-
-streamlit run app.py
-
-The dashboard will automatically open in your default web browser (usually http://localhost:8501).
-To stop it, press Ctrl + C in the terminal.
-
-📊 Dashboard Output
-
-All detected threats, OSINT data, and mitigations are displayed dynamically on the Streamlit web interface.
-
-Example Output:
-🎯 Threat Score: 85/100 - CRITICAL RISK
-🚨 CRITICAL BLOCK: Immediately block this domain at your Secure Web Gateway (SWG).
-
-📌 Use Cases
-
-Triaging user-reported phishing emails and suspicious links
-Enriching Incident Response (IR) investigations without tipping off attackers
-Lightweight vendor security assessment for baseline web controls
+When triaging potential phishing links, malicious beacons, or user-reported suspicious URLs, analysts require rapid, non-intrusive intelligence. This tool automates the extraction of passive OSINT, evaluates cryptographic security, aggregates community threat intel (VirusTotal), and processes the findings through a custom Risk Scoring Engine to provide mandatory, actionable mitigation steps.
 
 
+🛡️ Security & Ethics First
+Passive Intelligence Only: This tool does not perform intrusive scanning, directory brute-forcing, or payload execution against the target.
+
+Safe Triage: Designed to gather context without tipping off adversaries or triggering malicious web-hooks.
+
+✨ Key Features
+
+Passive Domain Intelligence (WHOIS): Extracts registrar data and calculates domain age to flag newly registered "burner" domains commonly used in phishing campaigns.
+
+Cryptographic Validation (SSL/TLS): Inspects certificate issuers and expiration dates without executing HTTP payloads.
+
+HTTP Security Header Inspection: Safely requests server headers to verify the presence of critical defensive configurations (HSTS, CSP, X-Frame-Options).
+
+VirusTotal API v3 Integration: Securely aggregates crowdsourced threat intelligence from over 90 security vendors to detect zero-day malicious URLs.
+
+Analyst Risk Scoring Engine: Automatically calculates a threat score (0-100) based on weighted risk factors, assigning a severity level (Low, Medium, High, Critical).
+
+Automated SOC Mitigations: Maps identified vulnerabilities to specific incident response playbooks (e.g., SWG blocking, proxy monitoring, server reconfiguration).
+
+Interactive Dashboard: Features a clean, dark-mode web UI built with Streamlit for rapid data visualization.
+
+🚀 Installation & Setup
+
+This project is designed to run in an isolated Python Virtual Environment to prevent system-wide package conflicts (PEP 668 compliant).
+
+Clone the repository & navigate to the directory: git clone https://github.com/yourusername/soc-url-analyzer.git
+cd soc-url-analyzer
+
+Bash
+git clone https://github.com/yourusername/soc-url-analyzer.git
+cd soc-url-analyzer
